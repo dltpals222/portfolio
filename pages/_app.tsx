@@ -1,6 +1,11 @@
 import React from "react";
 
-function MyApp({ Component, pageProps }) {
+interface MyAppType {
+  Component: JSX.ElementType;
+  pageProps: [];
+}
+
+function MyApp({ Component, pageProps }: MyAppType) {
   return <Component {...pageProps} />;
 }
 
