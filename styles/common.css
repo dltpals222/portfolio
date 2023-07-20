@@ -2,83 +2,46 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/** width */
-.width-200vw {
-  width: 200vw;
-}
-.width-150vw {
-  width: 150vw;
-}
-.width-100vw {
-  width: 100vw;
-}
-.width-90vw {
-  width: 90vw;
-}
-.width-80vw {
-  width: 80vw;
-}
-.width-70vw {
-  width: 70vw;
-}
-.width-60vw {
-  width: 60vw;
-}
-.width-50vw {
-  width: 50vw;
-}
-.width-40vw {
-  width: 40vw;
-}
-.width-30vw {
-  width: 30vw;
-}
-.width-20vw {
-  width: 20vw;
-}
-.width-10vw {
-  width: 10vw;
+.blockContainer {
+  width: 606.06px;
+  height: 378.79px;
 }
 
-/** height */
-.height-200vh {
-  height: 200vh;
-}
-.height-150vh {
-  height: 150vh;
-}
-.height-100vh {
-  height: 100vh;
-}
-.height-90vh {
-  height: 90vh;
-}
-.height-80vh {
-  height: 80vh;
-}
-.height-70vh {
-  height: 70vh;
-}
-.height-60vh {
-  height: 60vh;
-}
-.height-50vh {
-  height: 50vh;
-}
-.height-40vh {
-  height: 40vh;
-}
-.height-30vh {
-  height: 30vh;
-}
-.height-20vh {
-  height: 20vh;
-}
-.height-10vh {
-  height: 10vh;
+.blockStyle {
+  width: 303.03px;
+  height: 189.395px;
 }
 
-/** rotate */
-.rotate-90 {
-  transform: rotate(90deg);
+.decreaseBlockStyle {
+  width: 284px;
+  height: 189.395px;
+}
+
+.increaseBlockStyle {
+  width: 322.05999999999995px;
+  height: 189.395px;
+}
+
+.heightBlockContainer {
+  height: 606.06px;
+  width: 378.79px;
+}
+
+.heightBlockStyle {
+  height: 303.03px;
+  width: 189.395px;
+}
+
+.heightDecreaseBlockStyle {
+  height: 284px;
+  width: 189.395px;
+}
+
+.heightIncreaseBlockStyle {
+  height: 322.05999999999995px;
+  width: 189.395px;
+}
+
+.first-block-img {
+  background-image: url("../public/img/Rectangle-first.png");
 }
