@@ -9,7 +9,7 @@ const ExampleComponent = () => {
     const currentScrollPosition = window.pageYOffset;
     setScrollPosition(currentScrollPosition);
 
-    if (currentScrollPosition > 100) {
+    if (currentScrollPosition > 92) {
       setIsNavVisible(true);
     } else {
       setIsNavVisible(false);
@@ -27,7 +27,7 @@ const ExampleComponent = () => {
 
   return (
     <div>
-      <div className="w-screen h-120vh">시작페이지 입니다.</div>
+      <div className="w-screen h-110vh">시작페이지 입니다.</div>
       {isNavVisible && <Nav />}
     </div>
   );
