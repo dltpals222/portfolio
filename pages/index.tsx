@@ -1,32 +1,36 @@
-import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Nav from "./nav";
 
-const StartImg = () => {
+const ExampleComponent = () => {
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const [isNavVisible, setIsNavVisible] = useState<boolean>(false);
+
+  const handleScroll = () => {
+    const currentScrollPosition = window.pageYOffset;
+    setScrollPosition(currentScrollPosition);
+
+    if (currentScrollPosition > 100) {
+      setIsNavVisible(true);
+    } else {
+      setIsNavVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  console.log("현재 스크롤 위치", scrollPosition);
+
   return (
-    <div className="w-screen h-screen flex justify-center items-center relative">
-      <div className="z-0 w-[825px] h-[825px] grid grid-rows-2 grid-cols-2 gap-[25px]">
-        <div>
-          <div className="w-[400px] h-[125px]" />
-          <div className="w-[187.5px] h-[125px]" />
-          <div className="w-[187.5px] h-[125px]" />
-          <div className="w-[400px] h-[125px]" />
-        </div>
-        <div>
-          <div className="w-[187.5px] h-[125px]" />
-          <div className="w-[400px] h-[125px]" />
-        </div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div className="absolute z-1 w-[825px] h-[825px] grid grid-rows-2 grid-cols-2 gap-[25px]">
-        <Image src="/img/Group-71.png" alt="첫번째 블록" width={400} height={400} />
-        <Image src="/img/Group-72.png" alt="두번째 블록" width={400} height={400} />
-        <Image src="/img/Group-73.png" alt="세번째 블록" width={400} height={400} />
-        <Image src="/img/Group-74.png" alt="네번째 블록" width={400} height={400} />
-      </div>
+    <div>
+      <div className="w-screen h-120vh">시작페이지 입니다.</div>
+      {isNavVisible && <Nav />}
     </div>
   );
 };
 
-export default StartImg;
+export default ExampleComponent;
