@@ -1,0 +1,8 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@font-face {
+  font-family: "Open Sans", sans-serif;
+  src: url(/public/font/Open_Sans/static/OpenSans-Bold.eot) format("truetype");
+}
