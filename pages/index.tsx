@@ -3,7 +3,10 @@ import Rectangle from "./main/rectangle";
 
 const Index: React.FC = () => {
   return (
-    <div>
+    <div className="position">
+      <div className="w-[80vw] h-[80vh] absolute ">
+
+      </div>
       <Rectangle></Rectangle>
     </div>
   );
