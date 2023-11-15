@@ -6,7 +6,7 @@ const Rectangle: React.FC = () => {
 
   return (
     <div>
-      <div id="img-cnt" className="w-screen h-screen flex items-center justify-center opacity-40">
+      <div id="img-cnt" className="w-screen h-screen flex items-center justify-center opacity-80">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-[832px] h-[832px]">
           <div className={`${publicClass}`}>
             <div>
