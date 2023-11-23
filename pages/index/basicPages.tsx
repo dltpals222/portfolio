@@ -3,15 +3,17 @@ import {Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 const IndexPopup = () => {
   const alignCenter = "flex items-center"
+  const centerText = `text-center my-4`
   return (
     <div>
       <div className="background">
         <Parallax pages={5}>
           <ParallaxLayer offset={0} speed={0.5} className={`justify-center ${alignCenter}`}>
-            <div>
-              <p className="scrollText">안녕하세요 </p>
-            </div>
-            <div>
+            <div className="flex flex-col justify-around items-center w-full h-full">
+              <p>
+                <div className={`scrollText ${centerText}`}>안녕하세요</div>
+                <div className={`scrollText ${centerText}`}>이세민입니다.</div>
+              </p>
               <p className="scrollText">scroll down</p>
             </div>
           </ParallaxLayer>
