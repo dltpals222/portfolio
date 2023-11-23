@@ -1,48 +1,41 @@
-import React, {useRef} from "react";
-import {Parallax, ParallaxLayer, IParallax} from '@react-spring/parallax'
-
-interface pageProps {
-  offset: number;
-  gradient : string;
-  onClick: () => void;
-}
-
-const Page =  ({offset, gradient, onClick}:pageProps) => {
-  return (
-    <>
-      <ParallaxLayer offset={offset} speed={0.2} onClick={onClick}>
-        <div className="slopeBegin" />
-      </ParallaxLayer>
-
-      <ParallaxLayer offset={offset} speed={0.6} onClick={onClick}>
-        <div className={`slopeBegin ${gradient}`} />
-      </ParallaxLayer>
-
-      <ParallaxLayer className="text number" offset={offset} speed={0.3}>
-        <span>0{offset + 1}</span>
-      </ParallaxLayer>
-    </>
-  )
-}
+import React from "react";
+import {Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 const IndexPopup = () => {
-  const innerParallax = useRef<IParallax>(null)
-
-  const scroll = (to : number) => {
-    if(innerParallax.current){
-      innerParallax.current.scrollTo(to)
-    }
-  }
+  const alignCenter = "flex items-center"
   return (
-    <>
-      <div className="bg-[#dfdfdf]">
-        <Parallax className="container" ref={innerParallax} pages={3} horizontal>
-          <Page offset={0} gradient="pink" onClick={() => scroll(1)}></Page>
-          <Page offset={1} gradient="teal" onClick={() => scroll(2)}></Page>
-          <Page offset={2} gradient="tomato" onClick={() => scroll(0)}></Page>
+    <div>
+      <div className="background">
+        <Parallax pages={5}>
+          <ParallaxLayer offset={0} speed={0.5} className={`justify-center ${alignCenter}`}>
+            <div>
+              <p className="scrollText">안녕하세요 </p>
+            </div>
+            <div>
+              <p className="scrollText">scroll down</p>
+            </div>
+          </ParallaxLayer>
+
+          <ParallaxLayer sticky={{start:1, end:3}} className={`${alignCenter} justify-start`}>
+            <div className={`card sticky`}>
+              <p>나는 멈춰있다 1에서 3까지만</p>
+            </div>
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={1.5} speed={1.5} className={`justify-end ${alignCenter}`}>
+            <div className='card parallax purple'>
+              <p>난 아니야</p>
+            </div>
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={2.5} speed={1.5} className={`justify-end ${alignCenter}`}>
+            <div className="card parallax blue">
+              <p>나도 아니야</p>
+            </div>
+          </ParallaxLayer>
         </Parallax>
       </div>
-    </>
+    </div>
   )
 }
 
