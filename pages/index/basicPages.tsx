@@ -25,13 +25,13 @@ const IndexPopup = () => {
           </ParallaxLayer>
 
           <ParallaxLayer offset={1.5} speed={1.5} className={`justify-end ${alignCenter}`}>
-            <div className='card parallax purple'>
+            <div className='card purple'>
               <p>난 아니야</p>
             </div>
           </ParallaxLayer>
 
           <ParallaxLayer offset={2.5} speed={1.5} className={`justify-end ${alignCenter}`}>
-            <div className="card parallax blue">
+            <div className="card blue">
               <p>나도 아니야</p>
             </div>
           </ParallaxLayer>
