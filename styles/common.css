@@ -2,47 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-.blockContainer {
-  width: 606.06px;
-  height: 378.79px;
-}
-
-.blockStyle {
-  width: 303.03px;
-  height: 189.395px;
-}
-
-.decreaseBlockStyle {
-  width: 284px;
-  height: 189.395px;
-}
-
-.increaseBlockStyle {
-  width: 322.05999999999995px;
-  height: 189.395px;
-}
-
-.heightBlockContainer {
-  height: 606.06px;
-  width: 378.79px;
-}
-
-.heightBlockStyle {
-  height: 303.03px;
-  width: 189.395px;
-}
-
-.heightDecreaseBlockStyle {
-  height: 284px;
-  width: 189.395px;
-}
-
-.heightIncreaseBlockStyle {
-  height: 322.05999999999995px;
-  width: 189.395px;
-}
-
-
 /** width */
 .w-200vw {
   width: 200vw;
