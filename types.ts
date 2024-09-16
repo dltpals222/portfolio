@@ -6,3 +6,9 @@ export interface Targets {
   career? : string
   contact : string
 }
+
+export type RedirectButtonType = {
+  path : string;
+  text? : string | number;
+  className? : string;
+}
