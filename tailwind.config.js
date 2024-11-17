@@ -1,19 +1,32 @@
-/** @type {import('tailwindcss').Config} */
-
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
-    colors: {
-      "signiture-color-red": "#F38181",
-      "signiture-color-green": "#EAFFD0",
-      "signiture-color-blue": "#95E1D3",
-      "signiture-color-yellow": "#FCE38A",
-    },
+    extend: {
+      colors: {
+        primary: '#0070f3',
+        secondary: '#00b4d8',
+        dark: {
+          bg: '#121212',
+          text: '#ffffff'
+        },
+        light: {
+          bg: '#ffffff',
+          text: '#000000'
+        }
+      },
+      spacing: {
+        '128': '32rem',
+        '144': '36rem',
+      },
+      fontSize: {
+        '2xs': '0.65rem',
+      }
+    }
   },
   plugins: [],
-};
+  darkMode: 'class'
+} 
