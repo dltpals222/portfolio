@@ -6,7 +6,7 @@ import Navigation from '@/components/Navigation';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '포트폴리오',
+  title: "LSM's 포트폴리오",
   description: '풀스택 개발자 포트폴리오',
 };
 
