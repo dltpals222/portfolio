@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 21, "column": 0}, "map": {"version":3,"sources":["file://D%3A/vscode/portfolio/src/app/portfolio/page.tsx"],"sourcesContent":["import ProjectGrid from './components/ProjectGrid'\r\n\r\nexport default function PortfolioPage() {\r\n  return (\r\n    <div className=\"min-h-screen bg-gradient-to-br from-white via-blue-50/50 to-purple-50/50 dark:from-gray-900 dark:via-primary/5 dark:to-secondary/5\">\r\n      <div className=\"container mx-auto px-6 py-24\">\r\n        <h1 className=\"text-4xl md:text-5xl font-bold mb-16 font-geist-sans bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-200\">\r\n          Portfolio\r\n        </h1>\r\n        <div className=\"relative\">\r\n          <div className=\"absolute -inset-4 bg-gradient-to-r from-primary to-purple-600 rounded-2xl blur opacity-10\"></div>\r\n          <div className=\"relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-8 border border-gray-200 dark:border-gray-700\">\r\n            <ProjectGrid />\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  )\r\n} "],"names":[],"mappings":";;;;;;;;;;;AAEe,SAAS;IACtB,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC;YAAI,WAAU;;8BACb,8OAAC;oBAAG,WAAU;8BAAiK;;;;;;8BAG/K,8OAAC;oBAAI,WAAU;;sCACb,8OAAC;4BAAI,WAAU;;;;;;sCACf,8OAAC;4BAAI,WAAU;sCACb,cAAA,8OAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;AAMb"}},
+    {"offset": {"line": 86, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 97, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 97, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
