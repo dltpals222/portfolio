@@ -7,7 +7,7 @@ export default function Navigation() {
   const pathname = usePathname();
 
   const navItems = [
-    { href: '/', label: 'Home' },
+    { href: '/', label: 'Home', className: 'text-xl font-bold' },
     { href: '/about', label: 'About' },
     { href: '/skills', label: 'Skills' },
     { href: '/portfolio', label: 'Portfolio' },
@@ -27,7 +27,7 @@ export default function Navigation() {
                   pathname === item.href
                     ? 'text-blue-600 dark:text-blue-400'
                     : 'text-gray-600 dark:text-gray-300'
-                } hover:text-blue-500 dark:hover:text-blue-300`}
+                } hover:text-blue-500 dark:hover:text-blue-300 ${item.className || ''}`}
               >
                 {item.label}
               </Link>
