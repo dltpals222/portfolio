@@ -16,10 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko">
-      <body className={inter.className}>
+    <html lang="ko" suppressHydrationWarning className="scroll-smooth">
+      <body className={`${inter.className} dark:bg-gray-900 dark:text-white`}>
         <Navigation />
-        <main className="min-h-screen">{children}</main>
+        {children}
       </body>
     </html>
   );
