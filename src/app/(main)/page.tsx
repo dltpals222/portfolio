@@ -1,10 +1,8 @@
 'use client';
 
-import Image from 'next/image';
-
 export default function Home() {
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-900 snap-start">
+    <div id="home" className="relative flex min-h-screen flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-900 snap-start">
       {/* 벚꽃 배경 */}
       <div 
         className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-40"
@@ -24,14 +22,7 @@ export default function Home() {
         
         {/* 스크롤 안내 */}
         <div className="mt-12 text-center animate-bounce flex flex-col items-center gap-2">
-          <Image 
-            src="/svg/gui_gesture_scroll_down_icon_158448.svg"
-            alt="Scroll Down"
-            width={32}
-            height={32}
-            className="dark:invert"
-          />
-                    <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-gray-600 dark:text-gray-300">
             아래로 스크롤 하세요
           </p>
         </div>

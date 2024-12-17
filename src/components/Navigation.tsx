@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 export default function Navigation() {
   const pathname = usePathname();
   const [isDark, setIsDark] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     // 초기 다크모드 상태 확인
@@ -17,6 +18,26 @@ export default function Navigation() {
       setIsDark(false);
       document.documentElement.classList.remove('dark');
     }
+
+    // 스크롤 이벤트 핸들러
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'skills', 'portfolio', 'contact'];
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          const { top, bottom } = element.getBoundingClientRect();
+          if (top <= windowHeight / 2 && bottom >= windowHeight / 2) {
+            setActiveSection(section);
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleDarkMode = () => {
@@ -32,11 +53,11 @@ export default function Navigation() {
   };
 
   const navItems = [
-    { href: '/', label: 'Home', className: 'text-xl font-bold' },
-    { href: '/about', label: 'About' },
-    { href: '/skills', label: 'Skills' },
-    { href: '/portfolio', label: 'Portfolio' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/', label: 'Home', className: 'text-xl font-bold', id: 'home' },
+    { href: '/about', label: 'About', id: 'about' },
+    { href: '/skills', label: 'Skills', id: 'skills' },
+    { href: '/portfolio', label: 'Portfolio', id: 'portfolio' },
+    { href: '/contact', label: 'Contact', id: 'contact' },
   ];
 
   return (
@@ -49,7 +70,7 @@ export default function Navigation() {
                 key={item.href}
                 href={item.href}
                 className={`${
-                  pathname === item.href
+                  activeSection === item.id
                     ? 'text-blue-600 dark:text-blue-400'
                     : 'text-gray-600 dark:text-gray-300'
                 } hover:text-blue-500 dark:hover:text-blue-300 ${item.className || ''}`}
