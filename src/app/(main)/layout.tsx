@@ -1,6 +1,7 @@
 import Home from './page';
 import About from './about/page';
 import Skills from './skills/page';
+import Portfolio from './portfolio/page';
 
 export default function MainLayout() {
   return (
@@ -8,6 +9,7 @@ export default function MainLayout() {
       <Home />
       <About />
       <Skills />
+      <Portfolio />
     </main>
   );
 } 
