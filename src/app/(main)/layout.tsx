@@ -2,6 +2,7 @@ import Home from './page';
 import About from './about/page';
 import Skills from './skills/page';
 import Portfolio from './portfolio/page';
+import Contact from './contact/page';
 
 export default function MainLayout() {
   return (
@@ -10,6 +11,7 @@ export default function MainLayout() {
       <About />
       <Skills />
       <Portfolio />
+      <Contact />
     </main>
   );
 } 
