@@ -2,15 +2,19 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dltpals222.github.io/portfolio",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "predeploy": "npm run export",
+    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "gh-pages": "^6.2.0",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
