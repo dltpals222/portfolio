@@ -21,7 +21,7 @@ export default function About() {
             {/* 프로필 이미지 */}
             <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg flex-shrink-0 mx-auto md:mx-0">
               <Image 
-                src="/images/about_me.jpg" 
+                src="/portfolio/images/about_me.jpg" 
                 alt="Profile"
                 width={192}
                 height={192}
@@ -34,7 +34,7 @@ export default function About() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <p className="text-gray-600 dark:text-gray-300 flex items-center gap-3">
                   <Image 
-                    src="/svg/person_fill_icon_159457.svg" 
+                    src="/portfolio/svg/person_fill_icon_159457.svg" 
                     alt="User"
                     width={32}
                     height={32}
@@ -47,7 +47,7 @@ export default function About() {
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 flex items-center gap-3">
                   <Image 
-                    src="/svg/geo_fill_icon_159513.svg" 
+                    src="/portfolio/svg/geo_fill_icon_159513.svg" 
                     alt="Location"
                     width={32}
                     height={32}
@@ -60,7 +60,7 @@ export default function About() {
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 flex items-center gap-3">
                   <Image 
-                    src="/svg/calendar-weekly_icon-icons.com_56832.svg" 
+                    src="/portfolio/svg/calendar-weekly_icon-icons.com_56832.svg" 
                     alt="Birth"
                     width={32}
                     height={32}
@@ -73,7 +73,7 @@ export default function About() {
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 flex items-center gap-3">
                   <Image 
-                    src="/svg/social_college_education_graduation_cap_hat_university_icon_133176.svg" 
+                    src="/portfolio/svg/social_college_education_graduation_cap_hat_university_icon_133176.svg" 
                     alt="Education"
                     width={32}
                     height={32}
@@ -86,7 +86,7 @@ export default function About() {
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 flex items-center gap-3">
                   <Image 
-                    src="/svg/mobilephone_79875.svg" 
+                    src="/portfolio/svg/mobilephone_79875.svg" 
                     alt="Phone"
                     width={32}
                     height={32}
@@ -99,7 +99,7 @@ export default function About() {
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 flex items-center gap-3">
                   <Image 
-                    src="/svg/github-logo_icon-icons.com_73546.svg" 
+                    src="/portfolio/svg/github-logo_icon-icons.com_73546.svg" 
                     alt="GitHub"
                     width={32}
                     height={32}
