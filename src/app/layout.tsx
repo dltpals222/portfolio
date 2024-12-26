@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "LSM's 포트폴리오",
-  description: '풀스택 개발자 포트폴리오',
+  description: '개발자 포트폴리오',
 };
 
 export default function RootLayout({
