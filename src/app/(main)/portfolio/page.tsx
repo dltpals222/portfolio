@@ -36,6 +36,7 @@ export default function Portfolio() {
         '/images/portfolio/portfolio-1.png',
         '/images/portfolio/portfolio-2.png',
         '/images/portfolio/portfolio-3.png',
+        '/images/portfolio/portfolio-4.png',
       ],
       links: {
         github: 'https://github.com/dltpals222/portfolio',
