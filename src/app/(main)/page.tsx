@@ -3,11 +3,6 @@
 export default function Home() {
   return (
     <div id="home" className="relative flex min-h-screen flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-900 snap-start">
-      {/* 벚꽃 배경 */}
-      <div 
-        className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-40"
-        style={{ backgroundImage: "url('/images/cherry-blossom-bg.jpg')" }}
-      />
       
       {/* 배경 오버레이 */}
       <div className="absolute inset-0 -z-10 bg-gray-50/50 dark:bg-black/50" />

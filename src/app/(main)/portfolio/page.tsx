@@ -30,13 +30,13 @@ export default function Portfolio() {
       title: '포트폴리오 웹사이트',
       summary: 'Next.js와 TypeScript를 활용한 개인 포트폴리오 웹사이트',
       description: '개인 포트폴리오를 위한 웹사이트입니다. Next.js 14와 TypeScript를 사용하여 개발했으며, 다크모드와 반응형 디자인을 지원합니다.',
-      thumbnail: '/images/portfolio/portfolio-1.png',
+      thumbnail: '/public/images/portfolio/portfolio-1.png',
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
       images: [
-        '/images/portfolio/portfolio-1.png',
-        '/images/portfolio/portfolio-2.png',
-        '/images/portfolio/portfolio-3.png',
-        '/images/portfolio/portfolio-4.png',
+        '/public/images/portfolio/portfolio-1.png',
+        '/public/images/portfolio/portfolio-2.png',
+        '/public/images/portfolio/portfolio-3.png',
+        '/public/images/portfolio/portfolio-4.png',
       ],
       links: {
         github: 'https://github.com/dltpals222/portfolio',
