@@ -19,6 +19,7 @@ interface Project {
     start: string;
     end: string;
   };
+  status: 'active' | 'inactive' | 'development';
 }
 
 export default function Portfolio() {
@@ -45,7 +46,8 @@ export default function Portfolio() {
       duration: {
         start: '2024.11',
         end: '2025.01'
-      }
+      },
+      status: 'active'
     }
     // 더 많은 프로젝트를 추가할 수 있습니다
   ];
@@ -75,9 +77,20 @@ export default function Portfolio() {
               
               {/* 프로젝트 정보 */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
-                  {project.title}
-                </h3>
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+                    {project.title}
+                  </h3>
+                  <span className={`
+                    px-2 py-1 text-xs rounded-full
+                    ${project.status === 'active' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 
+                      project.status === 'inactive' ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' :
+                      'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'}
+                  `}>
+                    {project.status === 'active' ? '운영중' : 
+                     project.status === 'inactive' ? '운영종료' : '개발중'}
+                  </span>
+                </div>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   {project.summary}
                 </p>
@@ -113,9 +126,20 @@ export default function Portfolio() {
               </button>
 
               {/* 프로젝트 제목 */}
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
-                {selectedProject.title}
-              </h3>
+              <div className="flex items-center gap-4 mb-4">
+                <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
+                  {selectedProject.title}
+                </h3>
+                <span className={`
+                  px-3 py-1 text-sm rounded-full
+                  ${selectedProject.status === 'active' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 
+                    selectedProject.status === 'inactive' ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' :
+                    'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'}
+                `}>
+                  {selectedProject.status === 'active' ? '운영중' : 
+                   selectedProject.status === 'inactive' ? '운영종료' : '개발중'}
+                </span>
+              </div>
 
               {/* 프로젝트 기간 */}
               <p className="text-gray-600 dark:text-gray-400 mb-6">
