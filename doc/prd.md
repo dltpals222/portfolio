@@ -1,41 +1,51 @@
 # 포트폴리오 웹사이트 요구사항 명세서 (PRD)
 
-// ... (이전 섹션 1, 2, 3 유지) ...
+## 1. 개요
+포트폴리오 웹사이트는 개발자의 기술 스택과 프로젝트 경험을 효과적으로 보여주기 위한 웹 애플리케이션입니다.
+
+## 2. 핵심 기능
+- 스냅 스크롤링을 통한 섹션 단위 탐색
+- 다크모드 지원
+- 반응형 디자인
+- 프로젝트 포트폴리오 갤러리
+- 기술 스택 필터링 및 표시
+
+## 3. 기술 스택
+### Frontend
+- Next.js 15.0.3
+- React 19.0.0-rc (Canary)
+- TypeScript 5.x
+- Tailwind CSS 3.4.1
+- @emailjs/browser 4.4.1
+
+### 개발 도구
+- ESLint 8.x
+- PostCSS 8.x
+- gh-pages 6.2.0
+- tailwind-scrollbar 3.1.0
+- TurboPack (Next.js dev 서버)
 
 ## 4. 페이지 구조 및 컴포넌트 설계
-### 4.1 메인 페이지 (/)
-- 레이아웃: 심플하고 미니멀한 디자인
-- 컴포넌트:
-  - NavigationBar
-  - IntroSection
-    - 간단한 인사말
-    - 이름
-    - (선택) 직무 소개
 
-### 4.2 About Me (/about)
-- 데이터 구조:
+### 4.1 공통 컴포넌트
+#### Navigation
 ```typescript
-interface Profile {
+interface NavItem {
+  id: string;
   name: string;
-  age: number;
-  gender: string;
-  location: string;
-  education: string;
-  interests: string[];
-  introduction: string;
 }
 ```
-- 컴포넌트:
-  - ProfileCard
-    - 기본 정보 (나이, 성별 등)
-    - 자기소개
-  - DetailSection
-    - 학력
-    - 관심사
-    - 기타 정보
+- 섹션 간 이동
+- 다크모드 토글
+- 현재 섹션 하이라이트
+- 스크롤 위치 기반 활성 섹션 감지
 
-### 4.3 Skill List (/skills)
-- 데이터 구조:
+### 4.2 메인 페이지 (/)
+- 심플한 인트로 섹션
+- 스크롤 안내 애니메이션
+- 다크모드 대응 배경
+
+### 4.3 Skills (/skills)
 ```typescript
 interface Skill {
   name: string;
@@ -43,56 +53,53 @@ interface Skill {
     type: 'svg' | 'emoji' | 'image';
     source: string;
   };
-  category: 'frontend' | 'backend' | 'tools' | 'etc';
-  description?: string;
+  categories: string[];
+  description: string;
 }
 ```
-- 컴포넌트:
-  - SkillGrid
-    - 격자형 레이아웃
-    - 반응형 그리드 시스템
-  - SkillCard
-    - 아이콘/이미지 표시
-    - 기술명
-    - 호버 시 상세 설명
+- 기능:
+  - 카테고리 필터링 (전체/프론트엔드/백엔드/개발도구/기타)
+  - SVG 아이콘 지원
+  - 호버 시 스킬 설명 표시
+  - 다크모드 대응 (아이콘 반전 등)
 
 ### 4.4 Portfolio (/portfolio)
-- 데이터 구조:
 ```typescript
 interface Project {
   id: string;
   title: string;
-  summary: string;  // 카드에 표시될 간단한 설명
-  description: string;  // 모달에 표시될 상세 설명
+  summary: string;
+  description: string;
   thumbnail: string;
   technologies: string[];
-  images: string[];  // 프로젝트 상세 이미지들
+  images: string[];
   links: {
-    github?: string;  // 선택적
-    live?: string;    // 선택적
+    github?: string;
+    live?: string;
   };
   duration: {
     start: string;
     end: string;
   };
+  status: 'active' | 'inactive' | 'development';
 }
 ```
-- 컴포넌트:
-  - ProjectGrid
-    - 반응형 카드 그리드
-  - ProjectCard
-    - 썸네일 이미지
-    - 프로젝트 제목
-    - 간단한 설명
-    - 사용 기술 태그
-  - ProjectModal
-    - 상세 설명
-    - 이미지 갤러리
-    - 기술 스택 상세
-    - GitHub/Live 링크
+- 프로젝트 카드:
+  - 썸네일 이미지
+  - 프로젝트 제목
+  - 운영 상태 배지
+  - 기술 스택 태그
+  - 호버 효과
 
-### 4.5 Contact Me (/contact)
-- 데이터 구조:
+- 상세 모달:
+  - 이미지 갤러리 (스크롤 가능)
+  - 프로젝트 설명
+  - 개발 기간
+  - GitHub/Live 링크
+  - 기술 스택 상세
+  - 운영 상태 표시
+
+### 4.5 Contact (/contact)
 ```typescript
 interface ContactForm {
   name: string;
@@ -101,15 +108,41 @@ interface ContactForm {
   message: string;
 }
 ```
-- 컴포넌트:
-  - ContactForm
-    - 이름 입력
-    - 이메일 입력
-    - 제목 입력
-    - 메시지 입력
-    - 제출 버튼
-  - ContactInfo
-    - 이메일 주소
-    - 기타 연락처 정보
+- EmailJS 통합
+- 폼 유효성 검사
+- 전송 상태 피드백
 
-// ... (이후 섹션 5, 6, 7 유지) ... 
+## 5. 스타일링 및 UI/UX
+### 다크모드
+- 시스템 설정 감지
+- 수동 토글 지원
+- LocalStorage 상태 저장
+- Tailwind 다크모드 클래스 활용
+
+### 반응형 디자인
+- 모바일: 1열 그리드
+- 태블릿: 2열 그리드
+- 데스크톱: 3-4열 그리드
+
+### 애니메이션
+- 스크롤 스냅
+- 호버 효과
+- 모달 전환
+- 상태 배지 스타일링
+
+## 6. 성능 최적화
+- Next/Image 컴포넌트 활용
+- 코드 스플리팅
+- SVG 아이콘 최적화
+- 스크롤 이벤트 쓰로틀링
+
+## 7. 배포 및 유지보수
+### GitHub Pages 배포
+- gh-pages 패키지 활용
+- 자동화된 배포 스크립트
+- 정적 사이트 생성 (next export)
+
+### 유지보수 계획
+- 프로젝트 추가 용이성
+- 기술 스택 업데이트 프로세스
+- 다국어 지원 확장 가능성 
