@@ -45,7 +45,7 @@ export default function Portfolio() {
       },
       duration: {
         start: '2024.11',
-        end: '2025.01'
+        end: '2024.12'
       },
       status: 'active'
     }
