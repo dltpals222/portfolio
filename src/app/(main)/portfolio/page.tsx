@@ -2,55 +2,31 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { Project, projectsData } from '../../../../data/project';
 
-interface Project {
-  id: string;
-  title: string;
-  summary: string;
-  description: string;
-  thumbnail: string;
-  technologies: string[];
-  images: string[];
-  links: {
-    github?: string;
-    live?: string;
-  };
-  duration: {
-    start: string;
-    end: string;
-  };
-  status: 'active' | 'inactive' | 'development';
-}
+// interface Project {
+//   id: string;
+//   title: string;
+//   summary: string;
+//   description: string;
+//   thumbnail: string;
+//   technologies: string[];
+//   images: string[];
+//   links: {
+//     github?: string;
+//     live?: string;
+//   };
+//   duration: {
+//     start: string;
+//     end: string;
+//   };
+//   status: 'active' | 'inactive' | 'development';
+// }
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const projects: Project[] = [
-    {
-      id: 'project-1',
-      title: '포트폴리오 웹사이트',
-      summary: 'Next.js와 TypeScript를 활용한 개인 포트폴리오 웹사이트',
-      description: '개인 포트폴리오를 위한 웹사이트입니다. Next.js 14와 TypeScript를 사용하여 개발했으며, 다크모드와 반응형 디자인을 지원합니다.',
-      thumbnail: '/portfolio/images/portfolio/portfolio-1.png',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-      images: [
-        '/portfolio/images/portfolio/portfolio-1.png',
-        '/portfolio/images/portfolio/portfolio-2.png',
-        '/portfolio/images/portfolio/portfolio-3.png',
-        '/portfolio/images/portfolio/portfolio-4.png',
-      ],
-      links: {
-        github: 'https://github.com/dltpals222/portfolio',
-        live: 'https://dltpals222.github.io/portfolio/'
-      },
-      duration: {
-        start: '2024.11',
-        end: '2024.12'
-      },
-      status: 'active'
-    }
-    // 더 많은 프로젝트를 추가할 수 있습니다
-  ];
+  const projects: Project[] = projectsData
 
   return (
     <div id="portfolio" className="min-h-screen bg-gray-50 dark:bg-gray-900 py-20 snap-start">

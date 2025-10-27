@@ -1,15 +1,9 @@
 import Image from 'next/image';
+import { Profile, profileData } from '../../../../data/about';
 
 export default function About() {
-  const profile = {
-    name: "이세민",
-    birth: "1992.07",
-    phone: "010-7***-8***",
-    location: "대전광역시",
-    education: "4년제 대학교 졸업",
-    github: "https://github.com/dltpals222",
-  };
-
+  const profile: Profile = profileData
+  
   return (
     <div id="about" className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-20 snap-start">
       <div className="max-w-4xl w-full mx-auto p-8">
