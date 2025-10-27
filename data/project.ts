@@ -47,7 +47,7 @@ export const projectsData: Project[] = [
       "title": "HEX Color Palette Manager",
       "summary": "SQLite 기반의 컬러 팔레트 관리 및 미리보기 웹 애플리케이션",
       "description": "HEX 컬러 코드를 실시간으로 미리보고, 팔레트를 저장/관리할 수 있는 웹 애플리케이션입니다. \nGoogle OAuth 인증, 자동 백업 시스템, 보안 시스템, 실시간 모니터링 등의 기능을 제공합니다. \nlocalStorage와 SQLite 데이터베이스 간 자동 마이그레이션을 지원하며, 비회원/회원 모두 사용 가능합니다.",
-      "thumbnail": "https://via.placeholder.com/600x400/4285f4/ffffff?text=HEX+Color+Palette",
+      "thumbnail": "/portfolio/images/hex-color/hex-01.jpg",
       "technologies": ["Node.js", "Express", "SQLite", "HTML", "CSS", "JavaScript", "Google OAuth", "JWT", "Docker", "Fly.io", "Helmet.js"],
       "images": [
         "/portfolio/images/hex-color/hex-01.jpg",
